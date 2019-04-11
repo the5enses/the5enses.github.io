@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>ACIT 1620 - Final Project</title>
+    <title>education</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/finalproj.css"/>
 
@@ -14,34 +14,41 @@
     <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <!-- <div class="navbar-nav ml-auto mr-5">
+        <div class="navbar-nav ml-auto mr-5">
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Over here!
+                    Navigation
                 </a>
 
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" ><b>> Home</b></a>
+                    <a class="dropdown-item" href="index.html"> Home</a>
                     <a class="dropdown-item" href="aboutme.html">About me</a>
-                    <a class="dropdown-item" href="education.html">Education</a>
+                    <a class="dropdown-item" ><b>> Education</b></a>
                     <a class="dropdown-item" href="work.html">Work Experiences</a>
                     <a class="dropdown-item" href="hobbies.html">Hobbies</a>
                     <a class="dropdown-item" href="food.html">Food</a>
                     <a class="dropdown-item" href="motorcycles.html">Motorcycles</a>
-                    <a class="dropdown-item" href="travel.html">Travel</a>
                     <a class="dropdown-item" href="contact.html">Contact me</a>
                 </div>
             </li>
-        </div> -->
+        </div>
     </div>
 </nav>
 
-<div class="jumbotron ml-5 mr-5 mt-5">
-    <h2 class="display-4">Hey, hi, hello! :)</h2>
-    <p class="lead">This is the home page of my final project.</p>
-    <p class="lead">Sorry, there's no links to my other pages on this page. You'll have to click the button below to continue.
-    <br><br><button onclick="letsbegin()">Proceed?</button></p>
+<div class="main">
+    <h1>Education</h1>
+    <div id="eduleft">
+        <img src="images/vcc.jpg" alt="vcc" class="schools">
+        <br><br>
+        <img src="images/langara.jpg" alt="langara" class="schools">
+
+    </div>
+    <div id="mainright">
+        <p>I have a diploma in Hospitality Management which I obtained from
+            Vancouver Community College. <br><br>Prior to that I was in Langara College studying business.</p>
+    </div>
 </div>
+
 <div id="footer">ACIT Winter 2019</div>
 
 
@@ -53,8 +60,6 @@
     $('[data-toggle="tooltip"]').tooltip()
 })
 </script>
-<script src="js/finalproj.js"></script>
-
 </body>
 
 </html>

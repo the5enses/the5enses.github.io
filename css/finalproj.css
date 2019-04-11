@@ -1,0 +1,135 @@
+body {
+    margin: 0;
+}
+
+.main {
+
+}
+#mainleft {
+    width: 25%;
+    margin-left: 25%;
+    float: left;
+    padding-top: 100px;
+    background-color: transparent;
+}
+
+#mainright {
+    width: 50%;
+    float: right;
+    background-color: transparent;
+}
+
+#picofme {
+    width: 40%;
+    height: auto;
+    border-style: solid;
+    border-width: 1px;
+    margin-top: 70px;
+    min-width: 200px;
+}
+
+#eduleft {
+    width: 50%;
+    float: left;
+    background-color: transparent;
+}
+
+.schools {
+    border-style: solid;
+    border-width: 1px;
+    margin-left: 25%;
+    width: 55%;
+}
+
+#wwc {
+    border-style: solid;
+    border-width: 1px;
+    height: auto;
+    width: 50%;
+    margin-left: 40%;
+}
+
+#actualwork {
+    margin-left: 40%;
+}
+
+.middiv {
+    text-align: center;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 25px;
+}
+
+#hobbydiv {
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+    text-align: center;
+}
+
+#hobbypic {
+    border-style: solid;
+    border-width: 1px;
+    height: auto;
+    max-width: 100%;
+
+}
+
+#foodform {
+    padding-left: 55px;
+    padding-right: 55px;
+    padding-top: 95px;
+}
+
+#submitbutton {
+    margin-left: 65px;
+    margin-top: 25px;
+}
+
+#raisu {
+    max-width: 100%;
+    border-style: solid;
+    border-width: 1px;
+}
+
+
+#motoslides {
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 250px;
+    max-width: 500px;
+}
+
+.contactbuttons {
+    width: 50px;
+    margin: 8px;
+}
+a:hover {
+    color: transparent;
+    transition: color 0.4s;
+    transition: background-color 0.4s;
+}
+
+#footer {
+    position: fixed;
+    bottom: 0;
+    background-color: #333333;
+    width: 100%;
+    font-size: 9pt;
+    height: 30px;
+    color: white;
+    text-align: center;
+    padding-right: 25px;
+    padding-top: 6px;
+}
+
+
+h1 {
+    text-align: center;
+    padding-top: 30px;
+    margin-top: 0px;
+    margin-bottom: 45px;
+    font-family: Georgia;
+    font-size: 32pt;
+}

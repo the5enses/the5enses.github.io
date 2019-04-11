@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>food</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/finalproj.css"/>
+    <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyB-apa8mJs2h1zCPX1Ue6amTho2sVFutfE",
+            authDomain: "webapp1-84020.firebaseapp.com",
+            databaseURL: "https://webapp1-84020.firebaseio.com",
+            projectId: "webapp1-84020",
+            storageBucket: "webapp1-84020.appspot.com",
+            messagingSenderId: "804818635718"
+        };
+        firebase.initializeApp(config);
+    </script>
+</head>
+<body>
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <a class="navbar-brand pl-md-5" href="#">Patrick's Final Project</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto mr-5">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Navigation
+                </a>
+
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="index.html"> Home</a>
+                    <a class="dropdown-item" href="aboutme.html">About me</a>
+                    <a class="dropdown-item" href="education.html">Education</a>
+                    <a class="dropdown-item" href="work.html"> Work Experiences</a>
+                    <a class="dropdown-item" href="hobbies.html"> Hobbies</a>
+                    <a class="dropdown-item" ><b>> Food</b></a>
+                    <a class="dropdown-item" href="motorcycles.html">Motorcycles</a>
+                    <a class="dropdown-item" href="contact.html">Contact me</a>
+                </div>
+            </li>
+        </div>
+    </div>
+</nav>
+
+<div class="main">
+    <h1>Food</h1>
+    <div id="mainleft">
+        <p>Simply put, I like all kinds of food and cuisines, especially spicy foods! <br><br>Everything but eggplant. Do not put eggplant near me.
+        <br><br>I would like your opinion of your favorite foods. Please fill in the survey on this page and the data will be transferred to my database.
+        <br><br><img src="images/raisu.jpg" id="raisu" alt="food at Raisu">
+    </div>
+    <div id="mainright">
+        <form method="post" action="#">
+            <div id="foodform">
+            <label for="appy">Fav. appetizer</label>
+            <input type="text" class="form-control" id="appy" style="width: 200px">
+
+            <label for="entree">Fav. entree</label>
+            <input type="text" class="form-control" id="entree" style="width: 200px">
+
+            <label for="dessert">Fav. dessert</label>
+            <input type="text" class="form-control" id="dessert" style="width: 200px">
+
+            <label for="nonalc">Fav. non-alcoholic beverage</label>
+            <input type="text" class="form-control" id="nonalc" style="width: 200px">
+
+            <label for="alc">Fav. alcoholic beverage</label>
+            <input type="text" class="form-control" id="alc" style="width: 200px">
+            </div>
+        </form>
+        <button onclick="addData()" id="submitbutton">Send</button>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script>
+    $(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+})
+</script>
+<script>
+    var db = firebase.firestore();
+    db.collection("foods").get().then((querySnapshot));
+        querySnapshot.forEach((doc) =>  {
+    })
+
+</script>
+<script>
+    function addData(){
+        alert("Thanks for doing my survey");
+        var favappy = document.getElementById("appy").value;
+        var faventree = document.getElementById("entree").value;
+        var favdessert = document.getElementById("dessert").value;
+        var favnonalc = document.getElementById("nonalc").value;
+        var favalc = document.getElementById("alc").value;
+
+        db.collection("foods").add({
+            appy: favappy,
+            entree: faventree,
+            dessert: favdessert,
+            nonalc: favnonalc,
+            alc: favalc
+        })
+            .then(function(docRef) {
+                console.log("Document written with ID: ", docRef.id);
+                //update the products view
+                getProducts();
+            })
+            .catch(function(error) {
+                console.error("Error adding document: ", error);
+            });
+
+
+    }
+</script>
+</body>
+</html>
